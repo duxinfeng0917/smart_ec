@@ -12,70 +12,9 @@ cur_path = os.path.abspath(os.path.dirname(__file__))
 origin_file_path = r"model_sft0514.txt"
 
 
-# 百川微调数据格式
-def generate_Baichuan2_fine_tune_json(origin_file_path, save_path):
-    """
-    根据提取的摘要数据生成微调数据
-    :param origin_file_path:
-    :param save_path:
-    :return:
-    """
-
-    tune_list = []
-    conversations = []
-
-    # 读取电销对话意向识别文件
-    df = pd.read_excel(origin_file_path, sheet_name='Sheet1', engine='openpyxl')
-    # 获取对话列和一致列以及意向列
-    dialog_class = df['子目录'].tolist()
-    dialogs = df['对话内容'].tolist()
-    problemDescs = df['对话内容总结 - 标注'].tolist()
-
-    # 循环一致列，如果一致列中值不等于0，提取对话列中的对话
-    for index, dialog in enumerate(dialogs):
-        print(index, dialogs[index])
-        # if index == 101: break
-        if dialog_class[index] == "打款报备":
-            prompt = f"""你是优秀坐席，你的任务是与用户通话完毕后写一个会话总结，要求最多120字。以下三个反引号之间的是通话记录，请对这通对话进行总结，总结需要重点关注会话内容：用户诉求，用户还款是否成功，不成功原因，用户还款期数、还款日期、还款金额、还款方式，坐席是否帮用户认领或勾稽，坐席的建议等。
-            通话记录: ```
-            {dialogs[index]}
-            '''
-            """
-        elif dialog_class[index] == "查询":
-            prompt = f"""你是优秀坐席，你的任务是与用户通话完毕后写一个会话总结，要求最多120字。以下三个反引号之间的是通话记录，请对这通对话进行概括，需要关注会话内容中以下要点：用户来电原因，是否申请提前还款？是否咨询结清金额、邮寄进度、解押流程、解押时效？是否核对金额、账户信息？是否咨询违约金问题？坐席回复内容，用户对坐席回复是否满意，将时间、金额等细节也在概括中写明。
-            通话记录: ```
-            {dialogs[index]}
-            '''
-            """
-        elif dialog_class[index] == "还款方式":
-            prompt = f"""你是优秀坐席，你的任务是与用户通话完毕后写一个会话总结，要求最多120字。以下三个反引号之间的是通话记录，请对这通对话进行概括，需要关注会话内容中是否涉及以下要点，如果不涉及则无需关注：用户来电原因，是否存在扣款问题？是否咨询还款期数、还款金额、对公还款、逾期罚息、逾期宽限？是否申请内部账户还款？坐席是否提供对公或者电子账户？坐席回复内容，用户对坐席回复是否满意等在概括中写明。
-            通话记录: ```
-            {dialogs[index]}
-            '''
-            """
-        elif dialog_class[index] == "扣款时间":
-            prompt = f"""你是优秀坐席，你的任务是与用户通话完毕后写一个会话总结，要求最多120字。以下三个反引号之间的是通话记录，请对这通对话进行概括，需要关注会话内容中以下要点，如果未涉及则忽略：用户卡资金状态，用户还款是否成功，用户是否咨询扣款卡号、扣款时间、解押时效、地址修改、还款日修改，用户对坐席回复是否满意等在概括中写明。
-            通话记录: ```
-            {dialogs[index]}
-            '''
-            """
-        else:
-            prompt = f"""你是金牌坐席，你的任务是与用户通话完毕后写一个会话摘要，要求最多120字。
-            以下三个反引号之间的是通话记录，请对这通对话进行概括，重点关注会话内容、客户诉求，如通话中涉及具体金额、期数、日期等数据在概括中写明。
-            通话记录: ```
-            {dialogs[index]}
-            '''
-            """
-        conversations = [{"from": "human", "value": prompt}, {"from": "gpt", "value": problemDescs[index]}]
-        tune_list.append({"id": index, "conversations": conversations})
-
-    # 将tune_list写入json文件
-    with open(save_path, mode="w", encoding='utf-8') as f:
-        f.write(json.dumps(tune_list, ensure_ascii=False, indent=4))
-
 
 # Chatglm微调数据格式
-def generate_Chatglm3_fine_tune_json(origin_file_path, save_path):
+def generate_fine_tune_json(origin_file_path, save_path):
     """
     根据提取的摘要数据生成微调数据
     :param origin_file_path:
@@ -137,13 +76,6 @@ def generate_Chatglm3_fine_tune_json(origin_file_path, save_path):
 
 
 if __name__ == "__main__":
-    Baichuan = False
-    save_path = os.path.join(cur_path, "fine_tune_json",
-                             current_datetime + "_Baichuan2_tune.json") if Baichuan else os.path.join(cur_path,
-                                                                                                      "fine_tune_json",
-                                                                                                      current_datetime + "_Chatglm3_tune.json")
+    save_path = os.path.join(cur_path,"fine_tune_json",current_datetime + "_tune.json")
     print(save_path)
-    if Baichuan:
-        generate_Baichuan2_fine_tune_json(origin_file_path, save_path)
-    else:
-        generate_Chatglm3_fine_tune_json(origin_file_path, save_path)
+    generate_fine_tune_json(origin_file_path, save_path)

@@ -1,0 +1,10 @@
+{
+  "test": {
+    "log_dir": "server_logs",
+    "log_name": "server.log",
+    "audio_dir": "datasets/Audios",
+    "audio_file": "B.txt",
+    "asr_model": "related_models/asr_model/finetune_context",
+    "hot_words": "Hotwords.txt"
+  }
+}
