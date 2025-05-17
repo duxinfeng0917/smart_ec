@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /home/ander/workspace/Qwen3-8B
+adapter_name_or_path: /home/ander/workspace/LLaMA-Factory/saves/Qwen3-8B/lora/sft
+template: qwen3
+trust_remote_code: true
+
+### export
+export_dir: output0516/Qwen3-8B_lora_sft
+export_size: 5
+export_device: cpu  # choices: [cpu, auto]
+export_legacy_format: false

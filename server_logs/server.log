@@ -1,0 +1,327 @@
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt'}}
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:00:59,778] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:01:04,299] INFO [parsefile] mian:300: ===== 开始处理流程 =====
+[2025-05-17 21:01:04,299] INFO [parsefile] mian:306: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:01:04,299] INFO [parsefile] mian:277: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:01:04,299] INFO [parsefile] mian:278: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:01:04,300] INFO [parsefile] mian:293: 找到 3 个音频文件
+[2025-05-17 21:01:44,005] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:01:44,005] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:01:44,005] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt'}}
+[2025-05-17 21:01:44,006] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:01:44,006] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:01:44,006] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:01:44,006] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:01:48,514] INFO [parsefile] mian:300: ===== 开始处理流程 =====
+[2025-05-17 21:01:48,514] INFO [parsefile] mian:306: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:01:48,514] INFO [parsefile] mian:277: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:01:48,514] INFO [parsefile] mian:278: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:01:48,515] INFO [parsefile] mian:293: 找到 3 个音频文件
+[2025-05-17 21:02:08,470] INFO [parsefile] mian:110: asr处理时间:0.4443
+[2025-05-17 21:02:08,470] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来碗养胃的小米粥
+[2025-05-17 21:02:08,526] INFO [parsefile] mian:320: 5.分类结果: 1
+[2025-05-17 21:02:09,088] INFO [parsefile] mian:325: 6.大模型改写结果: 养胃,小米粥
+[2025-05-17 21:02:09,600] INFO [parsefile] mian:328: 7.召回结果: 养胃小米粥
+[2025-05-17 21:02:10,071] INFO [parsefile] mian:110: asr处理时间:0.4707
+[2025-05-17 21:02:10,071] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子
+[2025-05-17 21:02:10,082] INFO [parsefile] mian:320: 5.分类结果: 0
+[2025-05-17 21:02:10,507] INFO [parsefile] mian:110: asr处理时间:0.4243
+[2025-05-17 21:02:10,507] INFO [parsefile] mian:316: 4.ASR结果: 我要唱林童学的爱人寻味
+[2025-05-17 21:02:10,518] INFO [parsefile] mian:320: 5.分类结果: 0
+[2025-05-17 21:02:10,518] INFO [parsefile] mian:334: ===== 文件保存完成 =====
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt'}}
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:04:12,218] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:04:16,613] INFO [parsefile] mian:300: ===== 开始处理流程 =====
+[2025-05-17 21:04:16,613] INFO [parsefile] mian:306: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:04:16,613] INFO [parsefile] mian:277: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:04:16,613] INFO [parsefile] mian:278: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:04:16,615] INFO [parsefile] mian:293: 找到 3 个音频文件
+[2025-05-17 21:04:36,395] INFO [parsefile] mian:110: asr处理时间:0.4418
+[2025-05-17 21:04:36,395] INFO [parsefile] mian:317: 4.ASR结果: 天猫精灵来碗养胃的小米粥
+[2025-05-17 21:04:36,457] INFO [parsefile] mian:321: 5.分类结果: 1
+[2025-05-17 21:04:37,051] INFO [parsefile] mian:326: 6.大模型改写结果: 养胃,小米粥
+[2025-05-17 21:04:37,581] INFO [parsefile] mian:329: 7.召回结果: 养胃小米粥
+[2025-05-17 21:04:37,581] INFO [parsefile] mian:335: 8.整体耗时: 1.62784
+[2025-05-17 21:04:38,049] INFO [parsefile] mian:110: asr处理时间:0.468
+[2025-05-17 21:04:38,049] INFO [parsefile] mian:317: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子
+[2025-05-17 21:04:38,061] INFO [parsefile] mian:321: 5.分类结果: 0
+[2025-05-17 21:04:38,061] INFO [parsefile] mian:335: 8.整体耗时: 0.47961
+[2025-05-17 21:04:38,487] INFO [parsefile] mian:110: asr处理时间:0.4261
+[2025-05-17 21:04:38,487] INFO [parsefile] mian:317: 4.ASR结果: 我要唱林童学的爱人寻味
+[2025-05-17 21:04:38,498] INFO [parsefile] mian:321: 5.分类结果: 0
+[2025-05-17 21:04:38,498] INFO [parsefile] mian:335: 8.整体耗时: 0.43745
+[2025-05-17 21:04:38,498] INFO [parsefile] mian:338: ===== 文件保存完成 =====
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt'}}
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:13:40,688] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:13:45,024] INFO [parsefile] mian:297: ===== 开始处理流程 =====
+[2025-05-17 21:13:45,024] INFO [parsefile] mian:303: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:13:45,024] INFO [parsefile] mian:274: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:13:45,024] INFO [parsefile] mian:275: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:13:45,026] INFO [parsefile] mian:290: 找到 3 个音频文件
+[2025-05-17 21:14:04,593] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.4366
+[2025-05-17 21:14:04,593] INFO [parsefile] mian:317: asr
+[2025-05-17 21:14:04,653] INFO [parsefile] mian:322: 5.分类结果: 1	处理时间:0.0602
+[2025-05-17 21:14:05,164] INFO [parsefile] mian:328: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5104
+[2025-05-17 21:14:05,643] INFO [parsefile] mian:333: 7.召回结果: 养胃小米粥	处理时间:0.4791
+[2025-05-17 21:14:05,643] INFO [parsefile] mian:340:  ==整体耗时==: 1.48644
+[2025-05-17 21:14:06,118] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4751
+[2025-05-17 21:14:06,118] INFO [parsefile] mian:317: asr
+[2025-05-17 21:14:06,130] INFO [parsefile] mian:322: 5.分类结果: 0	处理时间:0.0113
+[2025-05-17 21:14:06,130] INFO [parsefile] mian:340:  ==整体耗时==: 0.48662
+[2025-05-17 21:14:06,554] INFO [parsefile] mian:316: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4244
+[2025-05-17 21:14:06,554] INFO [parsefile] mian:317: asr
+[2025-05-17 21:14:06,565] INFO [parsefile] mian:322: 5.分类结果: 0	处理时间:0.011
+[2025-05-17 21:14:06,565] INFO [parsefile] mian:340:  ==整体耗时==: 0.43553
+[2025-05-17 21:14:06,565] INFO [parsefile] mian:343: ===== 文件保存完成 =====
+[2025-05-17 21:14:45,159] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:14:45,159] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:14:45,159] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt'}}
+[2025-05-17 21:14:45,160] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:14:45,160] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:14:45,160] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:14:45,160] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:14:49,489] INFO [parsefile] mian:297: ===== 开始处理流程 =====
+[2025-05-17 21:14:49,489] INFO [parsefile] mian:303: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:14:49,489] INFO [parsefile] mian:274: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:14:49,489] INFO [parsefile] mian:275: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:14:49,490] INFO [parsefile] mian:290: 找到 3 个音频文件
+[2025-05-17 21:15:09,033] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.4441
+[2025-05-17 21:15:09,033] INFO [parsefile] mian:317: asr
+[2025-05-17 21:15:09,089] INFO [parsefile] mian:322: 5.分类结果: 1	处理时间:0.056
+[2025-05-17 21:15:09,583] INFO [parsefile] mian:328: 6.大模型改写结果: 养胃,小米粥	处理时间:0.4942
+[2025-05-17 21:15:10,056] INFO [parsefile] mian:333: 7.召回结果: 养胃小米粥	处理时间:0.4728
+[2025-05-17 21:15:10,056] INFO [parsefile] mian:340:  ==整体耗时==: 1.46734
+[2025-05-17 21:15:10,524] INFO [parsefile] mian:316: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4681
+[2025-05-17 21:15:10,524] INFO [parsefile] mian:317: asr
+[2025-05-17 21:15:10,536] INFO [parsefile] mian:322: 5.分类结果: 0	处理时间:0.0116
+[2025-05-17 21:15:10,536] INFO [parsefile] mian:340:  ==整体耗时==: 0.47977
+[2025-05-17 21:15:10,966] INFO [parsefile] mian:316: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4301
+[2025-05-17 21:15:10,966] INFO [parsefile] mian:317: asr
+[2025-05-17 21:15:10,977] INFO [parsefile] mian:322: 5.分类结果: 0	处理时间:0.0117
+[2025-05-17 21:15:10,978] INFO [parsefile] mian:340:  ==整体耗时==: 0.44191
+[2025-05-17 21:15:10,978] INFO [parsefile] mian:343: ===== 文件保存完成 =====
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt'}}
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:23:52,016] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:23:56,409] INFO [parsefile] mian:295: ===== 开始处理流程 =====
+[2025-05-17 21:23:56,409] INFO [parsefile] mian:301: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:23:56,409] INFO [parsefile] mian:272: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:23:56,409] INFO [parsefile] mian:273: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:23:56,410] INFO [parsefile] mian:288: 找到 3 个音频文件
+[2025-05-17 21:25:38,250] INFO [parsefile] __init__:29: 当前环境APP_ENV=test
+[2025-05-17 21:25:38,250] INFO [parsefile] __init__:30: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:25:38,251] INFO [parsefile] __init__:31: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt'}}
+[2025-05-17 21:25:38,251] INFO [parsefile] __init__:32: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:25:38,251] INFO [parsefile] __init__:33: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:25:38,251] INFO [parsefile] __init__:34: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:25:38,251] INFO [parsefile] __init__:35: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:25:42,575] INFO [parsefile] mian:295: ===== 开始处理流程 =====
+[2025-05-17 21:25:42,576] INFO [parsefile] mian:301: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:25:42,576] INFO [parsefile] mian:272: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:25:42,576] INFO [parsefile] mian:273: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:25:42,577] INFO [parsefile] mian:288: 找到 3 个音频文件
+[2025-05-17 21:26:01,852] INFO [parsefile] mian:314: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.448
+[2025-05-17 21:26:01,853] INFO [parsefile] mian:315: asr
+[2025-05-17 21:26:01,916] INFO [parsefile] mian:320: 5.分类结果: 1	处理时间:0.0636
+[2025-05-17 21:26:02,513] INFO [parsefile] mian:326: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5966
+[2025-05-17 21:26:03,050] INFO [parsefile] mian:331: 7.召回结果: 养胃小米粥	处理时间:0.5371
+[2025-05-17 21:26:03,050] INFO [parsefile] mian:338:  ==整体耗时==: 1.64552
+[2025-05-17 21:26:03,516] INFO [parsefile] mian:314: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4663
+[2025-05-17 21:26:03,516] INFO [parsefile] mian:315: asr
+[2025-05-17 21:26:03,528] INFO [parsefile] mian:320: 5.分类结果: 0	处理时间:0.0112
+[2025-05-17 21:26:03,528] INFO [parsefile] mian:338:  ==整体耗时==: 0.47767
+[2025-05-17 21:26:03,954] INFO [parsefile] mian:314: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4259
+[2025-05-17 21:26:03,954] INFO [parsefile] mian:315: asr
+[2025-05-17 21:26:03,965] INFO [parsefile] mian:320: 5.分类结果: 0	处理时间:0.0114
+[2025-05-17 21:26:03,965] INFO [parsefile] mian:338:  ==整体耗时==: 0.43742
+[2025-05-17 21:26:03,965] INFO [parsefile] mian:341: ===== 文件保存完成 =====
+[2025-05-17 21:39:07,473] INFO [parsefile] __init__:33: 当前环境APP_ENV=test
+[2025-05-17 21:39:07,473] INFO [parsefile] __init__:34: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:39:07,473] INFO [parsefile] __init__:35: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt', 'llm_model': 'related_models/Qwen3/output0516/Qwen3-8B_lora_sft', 'dom_text': 'dim_ai_exam_food_category_filter_out.txt', 'embedding_model': 'related_models/bge_base', 'rerank_model': 'related_models/bge_rerank'}}
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:36: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:37: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:38: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:39: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:40: 分类模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:39:07,474] INFO [parsefile] __init__:41: LLM模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:39:11,797] INFO [parsefile] mian:296: ===== 开始处理流程 =====
+[2025-05-17 21:39:11,797] INFO [parsefile] mian:302: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:39:11,797] INFO [parsefile] mian:273: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:39:11,797] INFO [parsefile] mian:274: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:39:11,798] INFO [parsefile] mian:289: 找到 3 个音频文件
+[2025-05-17 21:39:31,289] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.5127
+[2025-05-17 21:39:31,289] INFO [parsefile] mian:319: asr
+[2025-05-17 21:39:31,343] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0542
+[2025-05-17 21:39:31,896] INFO [parsefile] mian:330: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5526
+[2025-05-17 21:39:32,422] INFO [parsefile] mian:335: 7.召回结果: 养胃小米粥	处理时间:0.5266
+[2025-05-17 21:39:32,422] INFO [parsefile] mian:342:  ==整体耗时==: 1.64639
+[2025-05-17 21:39:32,882] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4595
+[2025-05-17 21:39:32,882] INFO [parsefile] mian:319: asr
+[2025-05-17 21:39:32,893] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0114
+[2025-05-17 21:39:32,893] INFO [parsefile] mian:342:  ==整体耗时==: 0.47102
+[2025-05-17 21:39:33,312] INFO [parsefile] mian:318: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.418
+[2025-05-17 21:39:33,312] INFO [parsefile] mian:319: asr
+[2025-05-17 21:39:33,323] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0113
+[2025-05-17 21:39:33,323] INFO [parsefile] mian:342:  ==整体耗时==: 0.42945
+[2025-05-17 21:39:33,323] INFO [parsefile] mian:345: ===== 文件保存完成 =====
+[2025-05-17 21:44:26,211] INFO [parsefile] __init__:34: 当前环境APP_ENV=test
+[2025-05-17 21:44:26,211] INFO [parsefile] __init__:35: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:36: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt', 'llm_model': 'related_models/Qwen3/output0516/Qwen3-8B_lora_sft', 'dom_text': 'dim_ai_exam_food_category_filter_out.txt', 'embedding_model': 'related_models/bge_base', 'rerank_model': 'related_models/bge_rerank'}}
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:37: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:38: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:39: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:40: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:41: 分类模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:44:26,212] INFO [parsefile] __init__:42: LLM模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:44:30,554] INFO [parsefile] mian:296: ===== 开始处理流程 =====
+[2025-05-17 21:44:30,554] INFO [parsefile] mian:302: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:44:30,554] INFO [parsefile] mian:273: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:44:30,554] INFO [parsefile] mian:274: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:44:30,556] INFO [parsefile] mian:289: 找到 3 个音频文件
+[2025-05-17 21:44:48,874] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.4481
+[2025-05-17 21:44:48,874] INFO [parsefile] mian:319: asr
+[2025-05-17 21:44:48,935] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0613
+[2025-05-17 21:44:49,520] INFO [parsefile] mian:330: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5847
+[2025-05-17 21:44:50,309] INFO [parsefile] mian:335: 7.召回结果: 养胃小米粥	处理时间:0.7897
+[2025-05-17 21:44:50,310] INFO [parsefile] mian:342:  ==整体耗时==: 1.88401
+[2025-05-17 21:44:50,775] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4656
+[2025-05-17 21:44:50,775] INFO [parsefile] mian:319: asr
+[2025-05-17 21:44:50,786] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0111
+[2025-05-17 21:44:50,786] INFO [parsefile] mian:342:  ==整体耗时==: 0.47684
+[2025-05-17 21:44:51,214] INFO [parsefile] mian:318: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4271
+[2025-05-17 21:44:51,214] INFO [parsefile] mian:319: asr
+[2025-05-17 21:44:51,225] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.011
+[2025-05-17 21:44:51,225] INFO [parsefile] mian:342:  ==整体耗时==: 0.43823
+[2025-05-17 21:44:51,225] INFO [parsefile] mian:345: ===== 文件保存完成 =====
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:34: 当前环境APP_ENV=test
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:35: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:36: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt', 'llm_model': 'related_models/Qwen3/output0516/Qwen3-8B_lora_sft', 'dom_text': 'dim_ai_exam_food_category_filter_out.txt', 'embedding_model': 'related_models/bge_base', 'rerank_model': 'related_models/bge_rerank'}}
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:37: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:38: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:39: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:40: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:45:10,038] INFO [parsefile] __init__:41: 分类模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:45:10,039] INFO [parsefile] __init__:42: LLM模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:45:14,482] INFO [parsefile] mian:296: ===== 开始处理流程 =====
+[2025-05-17 21:45:14,482] INFO [parsefile] mian:302: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:45:14,483] INFO [parsefile] mian:273: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:45:14,483] INFO [parsefile] mian:274: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:45:14,484] INFO [parsefile] mian:289: 找到 3 个音频文件
+[2025-05-17 21:45:33,222] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.4436
+[2025-05-17 21:45:33,222] INFO [parsefile] mian:319: asr
+[2025-05-17 21:45:33,281] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0587
+[2025-05-17 21:45:33,785] INFO [parsefile] mian:330: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5041
+[2025-05-17 21:45:34,566] INFO [parsefile] mian:335: 7.召回结果: 养胃小米粥	处理时间:0.7807
+[2025-05-17 21:45:34,566] INFO [parsefile] mian:342:  ==整体耗时==: 1.78729
+[2025-05-17 21:45:35,031] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.4645
+[2025-05-17 21:45:35,031] INFO [parsefile] mian:319: asr
+[2025-05-17 21:45:35,042] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0115
+[2025-05-17 21:45:35,042] INFO [parsefile] mian:342:  ==整体耗时==: 0.47619
+[2025-05-17 21:45:35,471] INFO [parsefile] mian:318: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4284
+[2025-05-17 21:45:35,471] INFO [parsefile] mian:319: asr
+[2025-05-17 21:45:35,482] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0117
+[2025-05-17 21:45:35,483] INFO [parsefile] mian:342:  ==整体耗时==: 0.44028
+[2025-05-17 21:45:35,483] INFO [parsefile] mian:345: ===== 文件保存完成 =====
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:34: 当前环境APP_ENV=test
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:35: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:36: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt', 'llm_model': 'related_models/Qwen3/output0516/Qwen3-8B_lora_sft', 'dom_text': 'dim_ai_exam_food_category_filter_out.txt', 'embedding_model': 'related_models/bge_base', 'rerank_model': 'related_models/bge_rerank'}}
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:37: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:38: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:39: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:40: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:41: 分类模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:46:51,592] INFO [parsefile] __init__:42: LLM模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:34: 当前环境APP_ENV=test
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:35: 环境配置路径：/home/ander/workspace/smart_ec/sec_config/config_env.json
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:36: 环境配置详情：{'test': {'log_dir': 'server_logs', 'log_name': 'server.log', 'audio_dir': 'datasets/Audios', 'audio_file': 'B.txt', 'asr_model': 'related_models/asr_model/finetune_context', 'hot_words': 'Hotwords.txt', 'class_model': 'related_models/bert_class/bert250516.ckpt', 'llm_model': 'related_models/Qwen3/output0516/Qwen3-8B_lora_sft', 'dom_text': 'dim_ai_exam_food_category_filter_out.txt', 'embedding_model': 'related_models/bge_base', 'rerank_model': 'related_models/bge_rerank'}}
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:37: 音频文件路径：/home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:38: 音频路径：/home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:39: ASR模型路径：/home/ander/workspace/smart_ec/related_models/asr_model/finetune_context
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:40: 热词路径：/home/ander/workspace/smart_ec/sec_config/Hotwords.txt
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:41: 分类模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:46:57,986] INFO [parsefile] __init__:42: LLM模型路径：/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt
+[2025-05-17 21:47:02,405] INFO [parsefile] mian:296: ===== 开始处理流程 =====
+[2025-05-17 21:47:02,405] INFO [parsefile] mian:302: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:47:02,405] INFO [parsefile] mian:273: 正在查找音频文件: /home/ander/workspace/smart_ec/sec_config/B.txt
+[2025-05-17 21:47:02,405] INFO [parsefile] mian:274: 正在查找音频路径: /home/ander/workspace/smart_ec/datasets/Audios
+[2025-05-17 21:47:02,407] INFO [parsefile] mian:289: 找到 12 个音频文件
+[2025-05-17 21:47:22,352] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗养胃的小米粥	处理时间:0.4549
+[2025-05-17 21:47:22,352] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:22,407] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0551
+[2025-05-17 21:47:22,983] INFO [parsefile] mian:330: 6.大模型改写结果: 养胃,小米粥	处理时间:0.5761
+[2025-05-17 21:47:23,468] INFO [parsefile] mian:335: 7.召回结果: 养胃小米粥	处理时间:0.485
+[2025-05-17 21:47:23,469] INFO [parsefile] mian:342:  ==整体耗时==: 1.57119
+[2025-05-17 21:47:24,010] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来一首海绵宝宝破裤子	处理时间:0.5417
+[2025-05-17 21:47:24,010] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:24,022] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0115
+[2025-05-17 21:47:24,022] INFO [parsefile] mian:342:  ==整体耗时==: 0.55338
+[2025-05-17 21:47:24,450] INFO [parsefile] mian:318: 4.ASR结果: 我要唱林童学的爱人寻味	处理时间:0.4275
+[2025-05-17 21:47:24,450] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:24,461] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0114
+[2025-05-17 21:47:24,461] INFO [parsefile] mian:342:  ==整体耗时==: 0.43915
+[2025-05-17 21:47:24,924] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵音乐声音调到四十五	处理时间:0.4628
+[2025-05-17 21:47:24,924] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:24,936] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0115
+[2025-05-17 21:47:24,936] INFO [parsefile] mian:342:  ==整体耗时==: 0.47449
+[2025-05-17 21:47:25,359] INFO [parsefile] mian:318: 4.ASR结果: 来碗萝卜炖肉圆汤吧	处理时间:0.423
+[2025-05-17 21:47:25,359] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:25,370] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0114
+[2025-05-17 21:47:25,661] INFO [parsefile] mian:330: 6.大模型改写结果: 萝卜炖肉圆汤	处理时间:0.2912
+[2025-05-17 21:47:25,757] INFO [parsefile] mian:335: 7.召回结果: 萝卜肉圆汤	处理时间:0.0958
+[2025-05-17 21:47:25,758] INFO [parsefile] mian:342:  ==整体耗时==: 0.82174
+[2025-05-17 21:47:26,268] INFO [parsefile] mian:318: 4.ASR结果: 歌曲奇迹	处理时间:0.51
+[2025-05-17 21:47:26,268] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:26,279] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0116
+[2025-05-17 21:47:26,279] INFO [parsefile] mian:342:  ==整体耗时==: 0.5218
+[2025-05-17 21:47:26,731] INFO [parsefile] mian:318: 4.ASR结果: 我让你返回天猫精灵我让你返回	处理时间:0.452
+[2025-05-17 21:47:26,732] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:26,743] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0114
+[2025-05-17 21:47:26,743] INFO [parsefile] mian:342:  ==整体耗时==: 0.4635
+[2025-05-17 21:47:27,182] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗小米南瓜热粥吧	处理时间:0.4389
+[2025-05-17 21:47:27,182] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:27,193] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0114
+[2025-05-17 21:47:27,440] INFO [parsefile] mian:330: 6.大模型改写结果: 小米南瓜热粥	处理时间:0.247
+[2025-05-17 21:47:27,531] INFO [parsefile] mian:335: 7.召回结果: 小米南瓜粥	处理时间:0.0902
+[2025-05-17 21:47:27,531] INFO [parsefile] mian:342:  ==整体耗时==: 0.78781
+[2025-05-17 21:47:28,050] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗鲜鱼头炖豆腐汤吧	处理时间:0.5194
+[2025-05-17 21:47:28,050] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:28,062] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0114
+[2025-05-17 21:47:28,530] INFO [parsefile] mian:330: 6.大模型改写结果: 鲜(活)鱼头炖豆腐汤	处理时间:0.4685
+[2025-05-17 21:47:28,645] INFO [parsefile] mian:335: 7.召回结果: 鱼头炖豆腐汤	处理时间:0.1151
+[2025-05-17 21:47:28,646] INFO [parsefile] mian:342:  ==整体耗时==: 1.11465
+[2025-05-17 21:47:29,161] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗热乎的三鲜豆腐汤吧	处理时间:0.515
+[2025-05-17 21:47:29,161] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:29,172] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0117
+[2025-05-17 21:47:29,950] INFO [parsefile] mian:330: 6.大模型改写结果: 热乎(现做,现熬,热腾),三鲜豆腐汤	处理时间:0.7782
+[2025-05-17 21:47:30,109] INFO [parsefile] mian:335: 7.召回结果: 三鲜豆腐汤	处理时间:0.1587
+[2025-05-17 21:47:30,109] INFO [parsefile] mian:342:  ==整体耗时==: 1.46381
+[2025-05-17 21:47:30,634] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵来碗秘制浓香皮蛋瘦肉粥	处理时间:0.5247
+[2025-05-17 21:47:30,634] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:30,646] INFO [parsefile] mian:324: 5.分类结果: 1	处理时间:0.0116
+[2025-05-17 21:47:31,159] INFO [parsefile] mian:330: 6.大模型改写结果: 秘制浓香,皮蛋瘦肉粥	处理时间:0.5133
+[2025-05-17 21:47:31,269] INFO [parsefile] mian:335: 7.召回结果: 皮蛋瘦肉粥粥	处理时间:0.1099
+[2025-05-17 21:47:31,269] INFO [parsefile] mian:342:  ==整体耗时==: 1.15976
+[2025-05-17 21:47:31,806] INFO [parsefile] mian:318: 4.ASR结果: 天猫精灵播放你能不要离开我	处理时间:0.5363
+[2025-05-17 21:47:31,806] INFO [parsefile] mian:319: asr
+[2025-05-17 21:47:31,817] INFO [parsefile] mian:324: 5.分类结果: 0	处理时间:0.0116
+[2025-05-17 21:47:31,817] INFO [parsefile] mian:342:  ==整体耗时==: 0.54809
+[2025-05-17 21:47:31,818] INFO [parsefile] mian:345: ===== 文件保存完成 =====

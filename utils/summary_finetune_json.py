@@ -27,32 +27,11 @@ def generate_fine_tune_json(origin_file_path, save_path):
     with open(origin_file_path, mode='r', encoding='utf-8') as f:
         fr_data = f.readlines()
 
-    # for idx, line_data in enumerate(data):
-    #     usr_input = line_data.split('\t')[0].replace("原始：", "")
-    #     model_result = line_data.split('\t')[1].replace("模型：", "")
-    #     print(f"Idx:{idx}\t{usr_input}\t{model_result}")
-
     # 循环一致列，如果一致列中值不等于0，提取对话列中的对话
     for index, dialog in enumerate(fr_data):
         print(index)
         usr_input = dialog.split('\t')[0].replace("原始：","")
         model_output = dialog.split('\t')[1].replace("模型：", "")
-        # usr_input = dialog.split('\t')[0]
-        # model_output = dialog.split('\t')[0]
-     #    prompt1 = f"""作为专业餐饮助手，请严格遵循以下规则处理需求：
-     # 【处理规则】
-     # 1. 输入解析原则：
-     #    - 当语句包含菜品特征词（如：养胃/少油/易消化/热乎/软糯/现熬/家常等）且包含具体菜品名称时：
-     #      ✔️ 必须提取所有菜品（保持原有表述）
-     #      ✔️ 必须提取所有菜品特征词
-     #    - 当语句只有菜品特征没有具体菜品词时：
-     #      ✔️ 必须根据提取扩展菜品特征词推荐1个具体菜品
-     #    - 当语句只有菜品名称时：
-     #      ✔️ 直接输出原始菜品名称
-     # 2. 输出格式规范：
-     #    → 仅有菜品：菜品名
-     #    → 有菜品和特征：特征词,菜品名
-     #    → 无菜品时："特征词,生成菜品名"""
         prompt = f"""作为专业老年人餐饮助手，请严格遵循以下规则处理需求：
         【处理规则】
         1. 输入解析原则：

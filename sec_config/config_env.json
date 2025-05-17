@@ -5,6 +5,11 @@
     "audio_dir": "datasets/Audios",
     "audio_file": "B.txt",
     "asr_model": "related_models/asr_model/finetune_context",
-    "hot_words": "Hotwords.txt"
+    "hot_words": "Hotwords.txt",
+    "class_model": "related_models/bert_class/bert250516.ckpt",
+    "llm_model": "related_models/Qwen3/output0516/Qwen3-8B_lora_sft",
+    "dom_text": "dim_ai_exam_food_category_filter_out.txt",
+    "embedding_model": "related_models/bge_base",
+    "rerank_model": "related_models/bge_rerank"
   }
 }

@@ -9,7 +9,8 @@ import jieba
 import faiss
 
 from typing import List, Dict, Any, Optional, Union
-from sec_config import system_logger, AUDIO_DIR, AUDIO_File, asr_model_path, hot_words_path
+from sec_config import system_logger, AUDIO_DIR, AUDIO_File, asr_model_path, hot_words_path, class_model_path, \
+    llm_model_path, dom_text_path, embedding_model_path, rerank_model_path
 import related_models.bert_class.bert as bert_model
 from funasr import AutoModel
 from funasr.utils.postprocess_utils import rich_transcription_postprocess
@@ -23,7 +24,11 @@ class Model_Predict:
     # def __init__(self, asr_model_path, class_model_path, llm_model_path, embedding_model_path, rerank_model_path, hot_words_path, category_text_path):
     def __init__(self, asr_model_path,
                  hot_words_path,
-
+                 class_model_path,
+                 llm_model_path,
+                 dom_text_path,
+                 embedding_model_path,
+                 rerank_model_path
                  ):
 
         # 判断GPU是否可用
@@ -40,13 +45,11 @@ class Model_Predict:
         self.bert_config = bert_model.Config()
         self.bert_model = bert_model.Model(self.bert_config).to(self.bert_config.device)
 
-        self.bert_model.load_state_dict(
-            torch.load("/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt",
-                       map_location='cuda:0'))
+        self.bert_model.load_state_dict(torch.load(class_model_path, map_location='cuda:0'))
         self.bert_model.eval()
 
         # Qwen8B模型
-        self.llm_model_path = "/home/ander/workspace/LLaMA-Factory/output0516/Qwen3-8B_lora_sft"
+        self.llm_model_path = llm_model_path
         # 初始化模型和分词器
         self.llm_model = AutoModelForCausalLM.from_pretrained(
             self.llm_model_path,
@@ -74,19 +77,17 @@ class Model_Predict:
         self.stopwords = {'来', '玩', '吧', '的', '一份', '来份', "要碗", '要个', "想吃", '一个', '份', '人份', "天猫",
                           "精灵", '天猫精灵'}
         # 构建语料库
-        category_text_path = "/home/ander/workspace/smart_ec/sec_config/dim_ai_exam_food_category_filter_out.txt"
-        self.df = pd.read_csv(category_text_path, sep="\t")
+        dom_text_path = dom_text_path
+        self.df = pd.read_csv(dom_text_path, sep="\t")
         self.corpus = self.df.apply(self.preprocess, axis=1).tolist()
         self.bm25 = BM25Okapi(self.corpus)
 
-        embedding_model_path = '/home/ander/yx_projects/yx_web_search/cpu/func/bge_base'
         # 向量及精排模型
         self.emb_model = BGEM3FlagModel(embedding_model_path, use_fp16=False)
-        self.reranker = FlagReranker(
-            "/home/ander/yx_projects/yx_rerank_bge/gpu/bge_rerank_process/rerank_infer/bge_m3_reranker", use_fp16=True)
+        self.reranker = FlagReranker(rerank_model_path, use_fp16=True)
 
         # 预计算所有文本的Embedding
-        with open(category_text_path, mode='r', encoding='utf-8') as f:
+        with open(dom_text_path, mode='r', encoding='utf-8') as f:
             fr_data = f.readlines()
         self.texts_emb = self.emb_model.encode(fr_data[1:], batch_size=12)["dense_vecs"]
         self.texts_emb = self.texts_emb.astype('float32')  # 转换为float32格式
@@ -102,10 +103,7 @@ class Model_Predict:
         :param hotwords_path: 热词路径
         :return: 转写结果
         """
-
-        start = time.time()
         asr_result = self.asr_model.generate(input=audio_path, language='zh-cn', hotword=str(self.hot_worlds))
-        system_logger.info(f"asr处理时间:{str(round(time.time() - start, 4))}")
         return str(asr_result[0]['key']), str(asr_result[0]['text'])
 
     def bert_classify(self, query):
@@ -305,29 +303,44 @@ def main_process() -> None:
     filenames = find_audio_files(AUDIO_File, AUDIO_DIR)
 
     # 2. 加载所有模型
-    run_model = Model_Predict(asr_model_path=asr_model_path, hot_words_path=hot_words_path)
+    run_model = Model_Predict(asr_model_path=asr_model_path, hot_words_path=hot_words_path,
+                              class_model_path=class_model_path, llm_model_path=llm_model_path,
+                              dom_text_path=dom_text_path, embedding_model_path=embedding_model_path,
+                              rerank_model_path=rerank_model_path)
 
     # 3. 处理流程
     for index, audio_item in enumerate(filenames):
+        pipeline_start_time = time.time()
+
         # 4. ASR转写文本
         asr_id, asr_text = run_model.asr_transcribe(audio_item)
-        system_logger.info(f"4.ASR结果: {asr_text}")
+        asr_time = time.time()
+        system_logger.info(f"4.ASR结果: {asr_text}\t处理时间:{str(round(asr_time - pipeline_start_time, 4))}")
+        system_logger.info(f"asr")
 
         # 5. 文本分类处理
         text_label = run_model.bert_classify(asr_text)
-        system_logger.info(f"5.分类结果: {text_label}")
+        class_time = time.time()
+        system_logger.info(f"5.分类结果: {text_label}\t处理时间:{str(round(class_time - asr_time, 4))}")
 
         if text_label == 1:
             # 6. 模型改写
             model_asr_text = run_model.llm_process_input(asr_text)
-            system_logger.info(f"6.大模型改写结果: {model_asr_text}")
+            llm_time = time.time()
+            system_logger.info(f"6.大模型改写结果: {model_asr_text}\t处理时间:{str(round(llm_time - class_time, 4))}")
+
             # 7. 召回答案
             call_result = run_model.recall_result(asr_text, model_asr_text)
-            system_logger.info(f"7.召回结果: {call_result}")
+            call_time = time.time()
+            system_logger.info(f"7.召回结果: {call_result}\t处理时间:{str(round(call_time - llm_time, 4))}")
+
             # 8. 保存文件
             fw_save.writelines(f"{asr_id}\t{asr_text}\t{text_label}\t{call_result}\n")
         else:
             fw_save.writelines(f"{asr_id}\t{asr_text}\t{text_label}\n")
+        pipeline_end_time = time.time()
+        system_logger.info(f" ==整体耗时==: {round(pipeline_end_time - pipeline_start_time, 5)}")
+
     fw_save.close()
     system_logger.info("===== 文件保存完成 =====")
 
