@@ -1,7 +1,7 @@
 import os
 import asyncio
 import time
-import json,random
+import json, random
 import torch
 import pandas as pd
 import numpy as np
@@ -9,7 +9,7 @@ import jieba
 import faiss
 
 from typing import List, Dict, Any, Optional, Union
-from sec_config import system_logger, AUDIO_DIR, AUDIO_File, asr_model_path,hot_words_path
+from sec_config import system_logger, AUDIO_DIR, AUDIO_File, asr_model_path, hot_words_path
 import related_models.bert_class.bert as bert_model
 from funasr import AutoModel
 from funasr.utils.postprocess_utils import rich_transcription_postprocess
@@ -18,10 +18,13 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from FlagEmbedding import BGEM3FlagModel, FlagReranker
 from rank_bm25 import BM25Okapi
 
+
 class Model_Predict:
     # def __init__(self, asr_model_path, class_model_path, llm_model_path, embedding_model_path, rerank_model_path, hot_words_path, category_text_path):
     def __init__(self, asr_model_path,
-                     hot_words_path):
+                 hot_words_path,
+
+                 ):
 
         # 判断GPU是否可用
         if torch.cuda.is_available():
@@ -37,12 +40,13 @@ class Model_Predict:
         self.bert_config = bert_model.Config()
         self.bert_model = bert_model.Model(self.bert_config).to(self.bert_config.device)
 
-        self.bert_model.load_state_dict(torch.load("/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt",
+        self.bert_model.load_state_dict(
+            torch.load("/home/ander/workspace/smart_ec/related_models/bert_class/bert250516.ckpt",
                        map_location='cuda:0'))
         self.bert_model.eval()
 
         # Qwen8B模型
-        self.llm_model_path = "/home/ander/workspace/LLaMA-Factory/output0516_3/Qwen3-8B_lora_sft"
+        self.llm_model_path = "/home/ander/workspace/LLaMA-Factory/output0516/Qwen3-8B_lora_sft"
         # 初始化模型和分词器
         self.llm_model = AutoModelForCausalLM.from_pretrained(
             self.llm_model_path,
@@ -67,7 +71,8 @@ class Model_Predict:
                                → 无菜品时："特征词,生成菜品名"""
 
         # 召回相关配置
-        self.stopwords = {'来', '玩', '吧', '的', '一份', '来份', "要碗", '要个', "想吃", '一个', '份', '人份', "天猫", "精灵", '天猫精灵'}
+        self.stopwords = {'来', '玩', '吧', '的', '一份', '来份', "要碗", '要个', "想吃", '一个', '份', '人份', "天猫",
+                          "精灵", '天猫精灵'}
         # 构建语料库
         category_text_path = "/home/ander/workspace/smart_ec/sec_config/dim_ai_exam_food_category_filter_out.txt"
         self.df = pd.read_csv(category_text_path, sep="\t")
@@ -77,7 +82,8 @@ class Model_Predict:
         embedding_model_path = '/home/ander/yx_projects/yx_web_search/cpu/func/bge_base'
         # 向量及精排模型
         self.emb_model = BGEM3FlagModel(embedding_model_path, use_fp16=False)
-        self.reranker = FlagReranker("/home/ander/yx_projects/yx_rerank_bge/gpu/bge_rerank_process/rerank_infer/bge_m3_reranker", use_fp16=True)
+        self.reranker = FlagReranker(
+            "/home/ander/yx_projects/yx_rerank_bge/gpu/bge_rerank_process/rerank_infer/bge_m3_reranker", use_fp16=True)
 
         # 预计算所有文本的Embedding
         with open(category_text_path, mode='r', encoding='utf-8') as f:
@@ -89,7 +95,6 @@ class Model_Predict:
         self.faiss_index = faiss.IndexFlatIP(self.texts_emb.shape[1])
         self.faiss_index.add(self.texts_emb)
 
-
     def asr_transcribe(self, audio_path):
         """
         ASR文本转写
@@ -100,7 +105,7 @@ class Model_Predict:
 
         start = time.time()
         asr_result = self.asr_model.generate(input=audio_path, language='zh-cn', hotword=str(self.hot_worlds))
-        system_logger.info(f"asr处理时间:{str(round(time.time()-start,4))}")
+        system_logger.info(f"asr处理时间:{str(round(time.time() - start, 4))}")
         return str(asr_result[0]['key']), str(asr_result[0]['text'])
 
     def bert_classify(self, query):
@@ -257,7 +262,6 @@ class Model_Predict:
         return results.iloc[max_idx]['item_name']
 
 
-
 def find_audio_files(folder_path: str, audio_path: str) -> tuple:
     """
     查找指定文件夹中的音频文件
@@ -280,12 +284,13 @@ def find_audio_files(folder_path: str, audio_path: str) -> tuple:
 
     for idx, audio_name in enumerate(data):
         if idx == 0: continue
-        audio_name = audio_name.split('\t')[0]+'.wav'
+        audio_name = audio_name.split('\t')[0] + '.wav'
         if audio_name in audio_list:
-            filename.append(os.path.join(audio_path,audio_name))
+            filename.append(os.path.join(audio_path, audio_name))
 
     system_logger.info(f"找到 {len(filename)} 个音频文件")
     return filename
+
 
 def main_process() -> None:
     """主处理流程"""
@@ -326,9 +331,6 @@ def main_process() -> None:
     fw_save.close()
     system_logger.info("===== 文件保存完成 =====")
 
+
 if __name__ == "__main__":
     main_process()
-
-
-
-
